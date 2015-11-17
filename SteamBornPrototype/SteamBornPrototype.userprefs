@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BuildingPlacement.cs">
+    <Files>
+      <File FileName="Assets\Scripts\StructureConfig.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BuildingPlacement.cs" Line="271" Column="14" />
+      <File FileName="Assets\Scripts\PlacementUI.cs" Line="47" Column="189" />
+      <File FileName="Assets\Scripts\CurrentWorkersPop.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
