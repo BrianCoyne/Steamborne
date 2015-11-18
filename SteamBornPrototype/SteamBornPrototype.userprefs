@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BuildingPlacement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResourceText.cs">
     <Files>
-      <File FileName="Assets\Scripts\StructureConfig.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BuildingPlacement.cs" Line="271" Column="14" />
-      <File FileName="Assets\Scripts\PlacementUI.cs" Line="47" Column="189" />
-      <File FileName="Assets\Scripts\CurrentWorkersPop.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResourceText.cs" Line="18" Column="30" />
+      <File FileName="Assets\Scripts\RivetText.cs" Line="18" Column="80" />
+      <File FileName="Assets\Scripts\CurrentWorkersPop.cs" Line="18" Column="84" />
+      <File FileName="Assets\Scripts\CurrentHousingText.cs" Line="18" Column="77" />
+      <File FileName="Assets\Scripts\CurrentVoltText.cs" Line="18" Column="77" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
