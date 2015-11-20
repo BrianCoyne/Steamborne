@@ -17,7 +17,7 @@ public class Structure : MonoBehaviour
 
     public float NextRivetGeneration = 0.0f;
 
-	public float NextVoltGeneration = 2.0f;
+	public float NextSteamGeneration = 0.0f;
 
     public StructureConfig MyConfig;
 
@@ -45,7 +45,7 @@ public class Structure : MonoBehaviour
     void Start()
     {
         NextRivetGeneration = Time.time + Random.Range(5.0f, 10.0f);
-		NextVoltGeneration = Time.time + Random.Range(5.0f, 10.0f);
+		NextSteamGeneration = Time.time + Random.Range(5.0f, 10.0f);
     }
 
     // Update is called once per frame

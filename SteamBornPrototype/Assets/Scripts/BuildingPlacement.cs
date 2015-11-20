@@ -31,7 +31,7 @@ public class BuildingPlacement : MonoBehaviour {
 
     public int CurrentRivets = 200;
 
-	public int CurrentVolts = 200;
+	public int CurrentSteam = 200;
 
     private float m_rivetRefundModifier = 0.5f;
 
@@ -101,7 +101,7 @@ public class BuildingPlacement : MonoBehaviour {
         StructureConfigs[4].WorkersRequired = 10;
         StructureConfigs[4].RivetMinGeneration = 0;
         StructureConfigs[4].RivetMaxGeneration = 0;
-        StructureConfigs[4].VoltGeneration = -25;
+        StructureConfigs[4].SteamGeneration = 10;
         StructureConfigs[4].BuildTime = 45;
 
         StructureConfigs[5] = new StructureConfig();
@@ -124,7 +124,7 @@ public class BuildingPlacement : MonoBehaviour {
         doArrivalCheck();
         workersCheck();
         doRivetGeneration();
-		doVoltGeneration ();
+		doSteamGeneration ();
     }
 
     public void doRivetGeneration()
@@ -156,27 +156,28 @@ public class BuildingPlacement : MonoBehaviour {
         }
     }
 
-	public void doVoltGeneration()
+	public void doSteamGeneration()
 	{
 		for (int index = 0; index < m_structures.Count; index++)
 		{
-			if (Time.time > m_structures[index].NextVoltGeneration 
-			    && m_structures[index].MyConfig.VoltGeneration > 0
-			    && m_structures[index].NextVoltGeneration != 10.0f)
+            if (Time.time > m_structures[index].NextSteamGeneration
+                && m_structures[index].MyConfig.SteamGeneration > 0
+                && m_structures[index].NextSteamGeneration != 10.0f)
+               
 			{
-				m_structures[index].NextVoltGeneration = Time.time
-					+ m_structures[index].MyConfig.VoltGenerationDelay;				
-											
-				CurrentVolts = CurrentVolts + m_structures[index].MyConfig.VoltGeneration;
-				
-				GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("VoltDisplay"));
+                m_structures[index].NextSteamGeneration = Time.time
+                    + m_structures[index].MyConfig.SteamGenerationDelay;
+
+                CurrentSteam = CurrentSteam + m_structures[index].MyConfig.SteamGeneration;
+
+                GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("SteamDisplay"));
 				go.transform.position = m_structures[index].transform.position + new Vector3(m_structures[index].MyConfig.BaseWidth / 2, 0.0f, m_structures[index].MyConfig.BaseHeight / 2);
-				
-				VoltDisplay voltsDisplay = go.GetComponent<VoltDisplay>();
-				
-				if (voltsDisplay != null)
+
+                SteamDisplay steamDisplay = go.GetComponent<SteamDisplay>();
+
+                if (steamDisplay != null)
 				{
-					voltsDisplay.SetVoltAmount(m_structures[index].MyConfig.VoltGeneration);
+                    steamDisplay.SetSteamAmount(m_structures[index].MyConfig.SteamGeneration);
 				}
 			}
 		}

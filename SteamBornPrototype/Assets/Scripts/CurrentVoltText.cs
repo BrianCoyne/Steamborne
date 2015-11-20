@@ -15,7 +15,7 @@ public class CurrentVoltText : MonoBehaviour {
 	void Update () 
 	{
 		
-		textvoltobject.text = "Volts = " + BuildingPlacement.Instance.CurrentVolts;
+		textvoltobject.text = "Volts = " + BuildingPlacement.Instance.CurrentSteam;
 	}
 }
 

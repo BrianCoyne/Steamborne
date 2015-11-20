@@ -29,6 +29,7 @@ public class StructureConfig {
 	public float VoltGenerationDelay = 8.0f;
 	
 	public int SteamGeneration = 0;
+    public float SteamGenerationDelay = 8.0f;
 
 	public int BuildLimit = -1;
 
