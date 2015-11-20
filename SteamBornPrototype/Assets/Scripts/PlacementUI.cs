@@ -25,39 +25,48 @@ public class PlacementUI : MonoBehaviour {
 	}
 
 
-void OnGUI()
-{
-		if (BuildingPlacement.Instance != null) {
+    void OnGUI()
+    {
+        if (BuildingPlacement.Instance != null)
+        {
 
-			for (int index = 0; index < BuildingPlacement.Instance.StructureConfigs.Length; index++) {
-				if (BuildingPlacement.Instance.StructureConfigs [index].StructuresPlaced < BuildingPlacement.Instance.StructureConfigs [index].BuildLimit 
-					|| BuildingPlacement.Instance.StructureConfigs [index].BuildLimit == -1) {
-
-					/*if (GUI.Button(new Rect(10, 10 + (35 * index), 160, 25), BuildingPlacement.Instance.StructureConfigs[index].Name + " " + BuildingPlacement.Instance.StructureConfigs[index].RivetCost))
-					{
-					BuildingPlacement.Instance.PlacingBuildingIndex = index;
-					}
-					}
-					}            
+            for (int index = 0; index < BuildingPlacement.Instance.StructureConfigs.Length; index++)
+            {
+                if (BuildingPlacement.Instance.StructureConfigs[index].StructuresPlaced < BuildingPlacement.Instance.StructureConfigs[index].BuildLimit
+                    || BuildingPlacement.Instance.StructureConfigs[index].BuildLimit == -1)
+                {
+                    /*
+                                        if (GUI.Button(new Rect(10, 10 + (35 * index), 160, 25), BuildingPlacement.Instance.StructureConfigs[index].Name + " " + BuildingPlacement.Instance.StructureConfigs[index].RivetCost))
+                                        {
+                                        BuildingPlacement.Instance.PlacingBuildingIndex = index;
+                                        }
+                                        }
+                                        }            
 	
 
 	
-					GUI.Box (new Rect ((Screen.width - 240) / 2, 10, 240, 25), "Housing: " + BuildingPlacement.Instance.CurrentHousing);
+                                        GUI.Box (new Rect ((Screen.width - 240) / 2, 10, 240, 25), "Housing: " + BuildingPlacement.Instance.CurrentHousing);
 	
-					GUI.Box (new Rect ((Screen.width - 240) / 2, 45, 240, 25), "Population: " + BuildingPlacement.Instance.CurrentPopulation + " / Workers: " + BuildingPlacement.Instance.CurrentWorkers);
+                                        GUI.Box (new Rect ((Screen.width - 240) / 2, 45, 240, 25), "Population: " + BuildingPlacement.Instance.CurrentPopulation + " / Workers: " + BuildingPlacement.Instance.CurrentWorkers);
 	
-					GUI.Box (new Rect ((Screen.width - 250), 10, 240, 25), "Rivets: " + BuildingPlacement.Instance.CurrentRivets); 
+                                        GUI.Box (new Rect ((Screen.width - 250), 10, 240, 25), "Rivets: " + BuildingPlacement.Instance.CurrentRivets); 
 
 
-					GUI.Box (new Rect ((Screen.width - 250), 45, 240, 25), "Volts: " + BuildingPlacement.Instance.CurrentVolts); 
-					*/
+                                        GUI.Box (new Rect ((Screen.width - 250), 45, 240, 25), "Volts: " + BuildingPlacement.Instance.CurrentVolts); 
 					
-				}
-			}
-		}
-	}
+                                        */
+                }
+            }
+        }
 
-	
+    }
+
+
+    public void onNewBuildStart()
+    {
+        BuildingPlacement.Instance.PlacingBuildingIndex = -1;
+    }
+
 	public void onBuildHouseClicked()
 	{
 		BuildingPlacement.Instance.PlacingBuildingIndex = 0;
@@ -78,12 +87,12 @@ void OnGUI()
 		BuildingPlacement.Instance.PlacingBuildingIndex = 4;
 	}
 
-	public void OnTopHatClicked()
+	public void OnBuildTopHatClicked()
 	{
 		BuildingPlacement.Instance.PlacingBuildingIndex = 7;
 	}
 
-	public void OnBuildGeneratorClicked()
+	public void OnBuildWindmillClicked()
 	{
 		BuildingPlacement.Instance.PlacingBuildingIndex = 1;
 	}
@@ -92,6 +101,16 @@ void OnGUI()
 	{
 		BuildingPlacement.Instance.PlacingBuildingIndex = 3;
 	}
+    
+    public void OnBuildBoilerPlantClicked()
+    {
+        BuildingPlacement.Instance.PlacingBuildingIndex = 4;
+    }
+
+    public void OnBuildClockTowerClicked()
+    {
+        BuildingPlacement.Instance.PlacingBuildingIndex = 5;
+    }
 
 	public void OnPauseButtonClicked()
     {
@@ -118,7 +137,8 @@ void OnGUI()
         Application.LoadLevel("Main");
     }
 
-    public void OnAudioPlayButtonClicked()
+
+    /*public void OnAudioPlayButtonClicked()
     {
         GetComponent<AudioSource>().Play();
     }
@@ -127,6 +147,6 @@ void OnGUI()
     {
         GetComponent<AudioSource>().Stop();
     }
-	
+	*/
 }
 

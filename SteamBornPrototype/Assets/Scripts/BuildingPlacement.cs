@@ -54,15 +54,15 @@ public class BuildingPlacement : MonoBehaviour {
 		StructureConfigs[0].BuildTime = 20;
         
         StructureConfigs[1] = new StructureConfig();
-        StructureConfigs[1].Name = "Generator";
-        StructureConfigs[1].PrefabLocation = "Structures/GeneratorPrefab";
+        StructureConfigs[1].Name = "Windmill";
+        StructureConfigs[1].PrefabLocation = "Structures/WindmillPrefab";
         StructureConfigs[1].RivetCost = 50;
         StructureConfigs[1].BaseWidth = 2;
         StructureConfigs[1].BaseHeight = 2;
         StructureConfigs[1].AttractionModifier = -20;
         StructureConfigs[1].WorkersRequired = 5;
 		StructureConfigs[1].VoltGeneration = 20;
-		StructureConfigs[0].BuildTime = 20;
+		StructureConfigs[1].BuildTime = 20;
 
         StructureConfigs[2] = new StructureConfig();
         StructureConfigs[2].Name = "Shop";
@@ -75,7 +75,7 @@ public class BuildingPlacement : MonoBehaviour {
         StructureConfigs[2].RivetMinGeneration = 5;
         StructureConfigs[2].RivetMaxGeneration = 8;
 		StructureConfigs[2].VoltGeneration = -1;
-		StructureConfigs[0].BuildTime = 20;
+		StructureConfigs[2].BuildTime = 20;
 
 		StructureConfigs[3] = new StructureConfig();
 		StructureConfigs[3].Name = "TownHall";
@@ -89,57 +89,32 @@ public class BuildingPlacement : MonoBehaviour {
 		StructureConfigs[3].RivetMaxGeneration = 8;
 		StructureConfigs[3].BuildLimit = 1;
 		StructureConfigs[3].VoltGeneration = 5;
-		StructureConfigs[0].BuildTime = 15;
+		StructureConfigs[3].BuildTime = 15;
 
-		StructureConfig config;
+        StructureConfigs[4] = new StructureConfig();
+        StructureConfigs[4].Name = "BoilerPlant";
+        StructureConfigs[4].PrefabLocation = "Structures/BoilerPlantPrefab";
+        StructureConfigs[4].RivetCost = 100;
+        StructureConfigs[4].BaseWidth = 2;
+        StructureConfigs[4].BaseHeight = 2;
+        StructureConfigs[4].AttractionModifier = -10;
+        StructureConfigs[4].WorkersRequired = 10;
+        StructureConfigs[4].RivetMinGeneration = 0;
+        StructureConfigs[4].RivetMaxGeneration = 0;
+        StructureConfigs[4].VoltGeneration = -25;
+        StructureConfigs[4].BuildTime = 45;
 
-		config = new StructureConfig ();
+        StructureConfigs[5] = new StructureConfig();
+        StructureConfigs[5].Name = "ClockTower";
+        StructureConfigs[5].PrefabLocation = "Structures/ClockTowerPrefab";
+        StructureConfigs[5].RivetCost = 50;
+        StructureConfigs[5].BaseWidth = 2;
+        StructureConfigs[5].BaseHeight = 2;
+        StructureConfigs[5].AttractionModifier = 25;
+        StructureConfigs[5].WorkersRequired = 1;
+        StructureConfigs[5].VoltGeneration = -10;
+        StructureConfigs[5].BuildTime = 45;
 		
-		config.Name = "Pylon";
-		config.PrefabLocation = "Structures/PylonPrefab";
-		config.RivetCost = 100;
-		config.BaseWidth = 2;
-		config.BaseHeight = 2;
-		config.AttractionModifier = 10;
-		config.WorkersRequired = 10;
-		config.RivetMinGeneration = 5; 
-		config.RivetMaxGeneration = 8;
-		config.VoltGeneration = 10;
-		
-		StructureConfigs[4] = config;
-		config = new StructureConfig ();
-		
-		config.Name = "Medium Housing";
-		config.PrefabLocation = "Structures/MediumHousingPrefab";
-		config.RivetCost = 100;
-		config.BaseWidth = 2;
-		config.BaseHeight = 2;
-		config.HousingModifier = 25;
-		config.AttractionModifier = -15;
-		
-		StructureConfigs[5] = config;
-		config = new StructureConfig ();
-		
-		config.Name = "Dense Housing";
-		config.PrefabLocation = "Structures/DenseHousingPrefab";
-		config.RivetCost = 150;
-		config.BaseWidth = 2;
-		config.BaseHeight = 2;
-		config.HousingModifier = 50;
-		config.AttractionModifier = -25;
-		
-		StructureConfigs[6] = config;
-		config = new StructureConfig ();
-		
-		config.Name = "Top Hat Store";
-		config.PrefabLocation = "Structures/TopHatPrefab";
-		config.RivetCost = 150;
-		config.BaseWidth = 2;
-		config.BaseHeight = 2;
-		config.HousingModifier = 50;
-		config.AttractionModifier = -25;
-		
-		StructureConfigs[7] = config;
 	}
 	
     void Update()

@@ -15,6 +15,6 @@ public class ResourceText : MonoBehaviour {
 	void Update () 
 	{
 		
-		textresourceobject.text = "" + BuildingPlacement.Instance.CurrentPopulation + "/" + BuildingPlacement.Instance.CurrentHousing + "         " + BuildingPlacement.Instance.CurrentRivets + "          " + BuildingPlacement.Instance.CurrentVolts;
+		textresourceobject.text = "" + BuildingPlacement.Instance.CurrentPopulation + "/" + BuildingPlacement.Instance.CurrentHousing + "         " + BuildingPlacement.Instance.CurrentRivets + "           " + BuildingPlacement.Instance.CurrentVolts;
 	}
 }	
