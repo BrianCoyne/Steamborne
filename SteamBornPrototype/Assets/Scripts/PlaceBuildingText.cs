@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlaceBuildingText : MonoBehaviour {
 
 	private Text m_text;
+    public Image image;
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +16,16 @@ public class PlaceBuildingText : MonoBehaviour {
 	void Update () {
 		m_text.text = "";
 
-		if (BuildingPlacement.Instance.PlacingBuildingIndex > -1) {
-			m_text.text = "Placing " + BuildingPlacement.Instance.StructureConfigs[BuildingPlacement.Instance.PlacingBuildingIndex].Name;
+		if (BuildingPlacement.Instance.PlacingBuildingIndex > -1) 
+        {
+			m_text.text = "" + BuildingPlacement.Instance.StructureConfigs[BuildingPlacement.Instance.PlacingBuildingIndex].Name;
+            image.gameObject.SetActive(true);
+
+        }
+            else 
+            {
+                image.gameObject.SetActive(false);
+            }
 		}
 	}
-}
+
