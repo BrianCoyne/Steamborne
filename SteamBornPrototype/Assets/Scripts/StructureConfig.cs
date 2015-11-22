@@ -9,6 +9,8 @@ public class StructureConfig {
 
     public int RivetCost = 20;
 
+    public int VoltCost = 0;
+
     public int WorkersRequired = 0;
 
     public float BaseWidth = 2;
@@ -25,7 +27,6 @@ public class StructureConfig {
     public float RivetDayChance = 0.25f;
 
 	public int VoltGeneration = 0;
-	public int VoltsRequired = 0;
 	public float VoltGenerationDelay = 8.0f;
 	
 	public int SteamGeneration = 0;

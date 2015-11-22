@@ -22,6 +22,8 @@ public class BuildingPlacement : MonoBehaviour {
 
     public int CurrentWorkers = 0;
 
+    public int FreeWorkers = 0;
+
     private int m_standardPopArrivalAmount = 5;
     private int m_maxPopArrivalAmount = 10;
     private float m_nextPopArrivalTime = 0;
@@ -32,6 +34,8 @@ public class BuildingPlacement : MonoBehaviour {
     public int CurrentRivets = 200;
 
 	public int CurrentSteam = 200;
+
+    public int CurrentVolts = 200;
 
     private float m_rivetRefundModifier = 0.5f;
 
@@ -46,6 +50,7 @@ public class BuildingPlacement : MonoBehaviour {
         StructureConfigs[0].Name = "House";
         StructureConfigs[0].PrefabLocation = "Structures/BasicHousePrefab";
         StructureConfigs[0].RivetCost = 20;
+        StructureConfigs[0].VoltCost = 10;
         StructureConfigs[0].BaseWidth = 2;
         StructureConfigs[0].BaseHeight = 2;
         StructureConfigs[0].HousingModifier = 20;
@@ -68,10 +73,11 @@ public class BuildingPlacement : MonoBehaviour {
         StructureConfigs[2].Name = "Shop";
         StructureConfigs[2].PrefabLocation = "Structures/ShopPrefab";
         StructureConfigs[2].RivetCost = 50;
+        StructureConfigs[2].VoltCost = 40;
         StructureConfigs[2].BaseWidth = 2;
         StructureConfigs[2].BaseHeight = 2;
         StructureConfigs[2].AttractionModifier = 10;
-        StructureConfigs[2].WorkersRequired = 2;
+        StructureConfigs[2].WorkersRequired = 4;
         StructureConfigs[2].RivetMinGeneration = 5;
         StructureConfigs[2].RivetMaxGeneration = 8;
 		StructureConfigs[2].VoltGeneration = -1;
@@ -95,6 +101,7 @@ public class BuildingPlacement : MonoBehaviour {
         StructureConfigs[4].Name = "BoilerPlant";
         StructureConfigs[4].PrefabLocation = "Structures/BoilerPlantPrefab";
         StructureConfigs[4].RivetCost = 100;
+        StructureConfigs[4].VoltCost = 50;
         StructureConfigs[4].BaseWidth = 2;
         StructureConfigs[4].BaseHeight = 2;
         StructureConfigs[4].AttractionModifier = -10;
@@ -108,6 +115,7 @@ public class BuildingPlacement : MonoBehaviour {
         StructureConfigs[5].Name = "ClockTower";
         StructureConfigs[5].PrefabLocation = "Structures/ClockTowerPrefab";
         StructureConfigs[5].RivetCost = 50;
+        StructureConfigs[5].VoltCost = 30;
         StructureConfigs[5].BaseWidth = 2;
         StructureConfigs[5].BaseHeight = 2;
         StructureConfigs[5].AttractionModifier = 25;
@@ -125,6 +133,8 @@ public class BuildingPlacement : MonoBehaviour {
         workersCheck();
         doRivetGeneration();
 		doSteamGeneration ();
+        doFreeWorkersCheck();
+        doVoltGeneration();
     }
 
     public void doRivetGeneration()
@@ -182,6 +192,32 @@ public class BuildingPlacement : MonoBehaviour {
 			}
 		}
 	}
+
+    public void doVoltGeneration()
+    {
+        for (int index = 0; index < m_structures.Count; index++)
+        {
+            if (Time.time > m_structures[index].NextVoltGeneration
+                && m_structures[index].MyConfig.VoltGeneration > 0
+                && m_structures[index].NextVoltGeneration != 10.0f)
+            {
+                m_structures[index].NextVoltGeneration = Time.time
+                    + m_structures[index].MyConfig.VoltGenerationDelay;
+
+                CurrentVolts = CurrentVolts + m_structures[index].MyConfig.VoltGeneration;
+
+                GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("VoltDisplay"));
+                go.transform.position = m_structures[index].transform.position + new Vector3(m_structures[index].MyConfig.BaseWidth / 2, 0.0f, m_structures[index].MyConfig.BaseHeight / 2);
+
+                VoltDisplay voltDisplay = go.GetComponent<VoltDisplay>();
+
+                if (voltDisplay != null)
+                {
+                    voltDisplay.SetVoltAmount(m_structures[index].MyConfig.VoltGeneration);
+                }
+            }
+        }
+    }
 
     private void workersCheck()
     {
@@ -305,6 +341,7 @@ public class BuildingPlacement : MonoBehaviour {
                         m_structures.Add(structure);
 
 						CurrentRivets = CurrentRivets - StructureConfigs[PlacingBuildingIndex].RivetCost;
+                        CurrentVolts = CurrentVolts - StructureConfigs[PlacingBuildingIndex].VoltCost;
 						CurrentHousing = CurrentHousing + StructureConfigs[PlacingBuildingIndex].HousingModifier;
 						m_baseAttraction = m_baseAttraction + StructureConfigs[PlacingBuildingIndex].AttractionModifier;
 
@@ -351,6 +388,12 @@ public class BuildingPlacement : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void doFreeWorkersCheck()
+    {
+        FreeWorkers = CurrentPopulation - CurrentWorkers;
+
     }
 
 	    

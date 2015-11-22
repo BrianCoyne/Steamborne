@@ -14,7 +14,7 @@ public class ResourceText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
-		textresourceobject.text = "" + BuildingPlacement.Instance.CurrentPopulation + "/" + BuildingPlacement.Instance.CurrentHousing + "         " + BuildingPlacement.Instance.CurrentRivets + "        " + BuildingPlacement.Instance.CurrentSteam;
+
+        textresourceobject.text = "" + BuildingPlacement.Instance.CurrentPopulation + "/" + BuildingPlacement.Instance.CurrentHousing + "         " + BuildingPlacement.Instance.CurrentRivets + "        " + BuildingPlacement.Instance.CurrentSteam + "           " + BuildingPlacement.Instance.CurrentVolts + "        " + BuildingPlacement.Instance.FreeWorkers;
 	}
 }	
