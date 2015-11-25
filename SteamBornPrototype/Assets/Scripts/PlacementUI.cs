@@ -32,9 +32,9 @@ public class PlacementUI : MonoBehaviour {
 
             for (int index = 0; index < BuildingPlacement.Instance.StructureConfigs.Length; index++)
             {
-                if (BuildingPlacement.Instance.StructureConfigs[index].StructuresPlaced < BuildingPlacement.Instance.StructureConfigs[index].BuildLimit
-                    || BuildingPlacement.Instance.StructureConfigs[index].BuildLimit == -1)
-                {
+               // if (BuildingPlacement.Instance.StructureConfigs[index].StructuresPlaced < BuildingPlacement.Instance.StructureConfigs[index].BuildLimit
+               //    || BuildingPlacement.Instance.StructureConfigs[index].BuildLimit == -1)
+               // {
                     /*
                                         if (GUI.Button(new Rect(10, 10 + (35 * index), 160, 25), BuildingPlacement.Instance.StructureConfigs[index].Name + " " + BuildingPlacement.Instance.StructureConfigs[index].RivetCost))
                                         {
@@ -57,7 +57,7 @@ public class PlacementUI : MonoBehaviour {
                                         */
                 }
             }
-        }
+        
 
     }
 

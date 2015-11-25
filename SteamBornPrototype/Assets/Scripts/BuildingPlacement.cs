@@ -66,7 +66,7 @@ public class BuildingPlacement : MonoBehaviour {
         StructureConfigs[1].BaseHeight = 2;
         StructureConfigs[1].AttractionModifier = -20;
         StructureConfigs[1].WorkersRequired = 5;
-		StructureConfigs[1].VoltGeneration = 20;
+		StructureConfigs[1].VoltGeneration = 10;
 		StructureConfigs[1].BuildTime = 20;
 
         StructureConfigs[2] = new StructureConfig();
