@@ -1,13 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BuildingPlacement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlaceBuildingText.cs">
     <Files>
-      <File FileName="Assets\Scripts\BuildingPlacement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResourceText.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RivetText.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CurrentWorkersPop.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CurrentHousingText.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CurrentVoltText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlaceBuildingText.cs" Line="32" Column="1" />
+      <File FileName="Assets\Scripts\PlacementUI.cs" Line="1" Column="1" />
+      <File FileName="F:\College\College\Group Assignment - Pied Piper\May 8th 2015 Build\Assets\Scripts\PlayerInventory.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
