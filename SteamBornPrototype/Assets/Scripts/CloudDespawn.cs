@@ -14,7 +14,7 @@ public class CloudDespawn : MonoBehaviour {
 	void Update () 
     {
         timer += 1.0F * Time.deltaTime;
-        if (timer >= 90)
+        if (timer >= 300)
         {
             GameObject.Destroy(gameObject);
         }

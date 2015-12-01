@@ -13,7 +13,8 @@ public class CloudMove : MonoBehaviour {
 	void Update () {
 
         
-		transform.Translate(Vector3.left * Time.deltaTime * 0.2f);
+		transform.Translate(Vector3.left * Time.deltaTime * 0.16f);
         
+		gameObject.transform.rotation = Quaternion.AngleAxis (45, Vector3.up);
 	}
 }

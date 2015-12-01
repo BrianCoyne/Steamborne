@@ -137,6 +137,11 @@ public class PlacementUI : MonoBehaviour {
         Application.LoadLevel("Main");
     }
 
+	public void OnTutorialButtonClicked()
+	{
+		Application.LoadLevel("Tutorial");
+	}
+
 
     /*public void OnAudioPlayButtonClicked()
     {
